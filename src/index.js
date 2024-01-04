@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './assets/css/bootstrap.min.css';
+import './assets/css/style.css';
+import "./assets/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
+import "./assets/lib/owlcarousel/assets/owl.carousel.min.css"
+import "./assets/lib/animate/animate.min.css"
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
