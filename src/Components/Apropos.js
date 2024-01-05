@@ -30,11 +30,11 @@ export default function Apropos () {
                 />
                 <div className='bg-white border p-1 position-absolute bottom-0 end-0 mt-n4 me-n4'>
                   <div className='border py-4 px-5'>
-                    <h4>
-                      Hotel <span className='text-primary'>Haut</span>
+                    <h4 style={{color:"#000000"}}>
+                      Hotel Haut
                     </h4>
-                    <h4>
-                      <span className='text-primary'>De</span> Gamme
+                    <h4 style={{color:"#000000"}}>
+                      De Gamme
                     </h4>
                   </div>
                 </div>
@@ -265,9 +265,9 @@ export default function Apropos () {
                 <div className='bg-white border p-1 position-absolute top-0 end-0 mt-n4 me-n4'>
                   <div className='border py-4 px-5'>
                     <h1 className='display-4 text-primary mb-0'>
-                      2 <span className='fs-4 text-dark'>Années</span>
+                      2 <span className='fs-4'style={{color:"#000000"}}>Années</span>
                     </h1>
-                    <h4>Experience</h4>
+                    <h4 style={{color:"#000000"}}>Experience</h4>
                   </div>
                 </div>
               </div>

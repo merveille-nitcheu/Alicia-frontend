@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
+import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 
 export default function Reservation ({onClick}) {
   const [nbChambres, setNbChambres] = useState(1)
@@ -55,28 +58,28 @@ export default function Reservation ({onClick}) {
     return inputReserves
   }
 
+ 
+
   return (
     <div className='row g-3 py-4 pt-2 px-0 px-sm-4'>
       <div className='col-12 col-sm-6'>
         <div className='date' id='date3' data-target-input='nearest'>
-          <input
-            type='text'
-            className='form-control datetimepicker-input'
-            placeholder="Date d'arrivée"
-            data-target='#date3'
-            data-toggle='datetimepicker'
-          />
+        <LocalizationProvider dateAdapter={AdapterDayjs} className='custom-div'>
+                    <DatePicker
+          label="Date d'arrivée"
+         
+        />
+                    </LocalizationProvider>
         </div>
       </div>
       <div className='col-12 col-sm-6'>
         <div className='date' id='date4' data-target-input='nearest'>
-          <input
-            type='text'
-            className='form-control datetimepicker-input'
-            placeholder='Date de départ'
-            data-target='#date4'
-            data-toggle='datetimepicker'
-          />
+        <LocalizationProvider dateAdapter={AdapterDayjs} >
+                    <DatePicker
+          label="Date de depart"
+         
+        />
+                    </LocalizationProvider>
         </div>
       </div>
       <div className='col-12 col-sm-6'>

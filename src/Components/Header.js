@@ -22,7 +22,7 @@ export default function Header() {
                                     Hotel</h6>
                                 <h1 className="display-3 text-white mb-4 animated slideInDown">Ici c'est chez nous </h1>
                                 <Link to='/chambres' className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
-                                    style={{borderRadius: '0.6rem'}}> Nos chambres </Link>
+                                    style={{borderRadius: '0.6rem',color:'#000000'}}> Nos chambres </Link>
                                 <Link to="/reservation" className="btn btn-light py-md-3 px-md-5 animated slideInRight"
                                     style={{borderRadius: '0.6rem'}}>Réservez </Link>
                             </div>
@@ -38,7 +38,7 @@ export default function Header() {
                                 <h1 className="display-3 text-white mb-4 animated slideInDown">Bienvenue chez chez nous
                                 </h1>
                                 <Link to='/chambres' className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
-                                    style={{borderRadius: '0.6rem'}}> Nos chambres </Link>
+                                    style={{borderRadius: '0.6rem',color:'#000000'}}> Nos chambres </Link>
                                 <Link to="/reservation" className="btn btn-light py-md-3 px-md-5 animated slideInRight"
                                     style={{borderRadius: '0.6rem'}}>Réservez </Link>
                             </div>
@@ -54,7 +54,7 @@ export default function Header() {
                                 <h1 className="display-3 text-white mb-4 animated slideInDown">Faites votre reservation
                                 </h1>
                                 <Link to='/chambres' className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
-                                    style={{borderRadius: '0.6rem'}}> Nos chambres </Link>
+                                    style={{borderRadius: '0.6rem',color:'#000000'}}> Nos chambres </Link>
                                 <Link to="/reservation" className="btn btn-light py-md-3 px-md-5 animated slideInRight"
                                     style={{borderRadius: '0.6rem'}}>Réservez </Link>
                             </div>
@@ -70,7 +70,7 @@ export default function Header() {
                                 <h1 className="display-3 text-white mb-4 animated slideInDown">L'ideal pour un sejour
                                     agreable</h1>
                                     <Link to='/chambres' className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
-                                    style={{borderRadius: '0.6rem'}}> Nos chambres </Link>
+                                    style={{borderRadius: '0.6rem',color:'#000000'}}> Nos chambres </Link>
                                 <Link to="/reservation" className="btn btn-light py-md-3 px-md-5 animated slideInRight"
                                     style={{borderRadius: '0.6rem'}}>Réservez </Link>
                             </div>

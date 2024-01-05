@@ -47,7 +47,7 @@ export default function About() {
                                 </div>
                             </div>
                         </div>
-                        <Link className="btn btn-primary py-3 px-5 mt-2" style= {{borderRadius:'0.6rem'}} to="/a-propos">En
+                        <Link className="btn btn-primary py-3 px-5 mt-2" style= {{borderRadius:'0.6rem',color:'#000000'}} to="/a-propos">En
                             Savoir Plus</Link>
                     </div>
                     <div className="col-lg-6">

@@ -1,4 +1,9 @@
 /********** Template CSS **********/
+
+@font-face {
+    font-family: 'audiowide'; /* Remplacez 'NomPolice' par le nom de votre police */
+    src: url('../font/Audiowide-Regular.ttf') format('truetype'); /* Remplacez le chemin par l'emplacement de votre fichier de police */
+  }
 :root {
     --primary: #fdc401;
     --light: #F1F8FF;
@@ -466,7 +471,7 @@
 .footer .btn.btn-link::before {
     position: relative;
     content: "\f105";
-    font-family: "Font Awesome 5 Free";
+    font-family: "audiowide";
     font-weight: 900;
     margin-right: 10px;
 }
@@ -528,3 +533,8 @@
   .fa-arrow-right:hover {
 	animation: arrow-right .5s cubic-bezier(.36,.07,.57,.99) infinite;
 }
+
+.css-z3c6am-MuiFormControl-root-MuiTextField-root{
+    width: 100% !important;
+}
+

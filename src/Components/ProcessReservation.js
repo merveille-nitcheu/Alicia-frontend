@@ -13,9 +13,9 @@ export default function ProcessReservation () {
   const getStepContent = (step) => {
     switch (step) {
       case 0:
-        return <Reservation />;
+        return <Reservation onClick={handleclickReservation}/>;
       case 1:
-        return <ChambresDispo/>;
+        return <ChambresDispo onClick={handleclickReservation}/>;
       default:
         return null;
     }
@@ -23,7 +23,7 @@ export default function ProcessReservation () {
 
   const [activeStep, setActiveStep] = React.useState(0);
 
-  const handleNext = () => {
+  const handleclickReservation = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 

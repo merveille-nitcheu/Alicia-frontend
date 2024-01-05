@@ -15,7 +15,7 @@ export default function Baniere() {
                             diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo
                             magna dolore erat amet</p>
                         <Link to="/chambres" className="btn btn-primary py-md-3 px-md-3 me-3"
-                            style={{borderRadius: "0.6rem"}}>Nos chambres</Link>
+                            style={{borderRadius: "0.6rem",color:"#000000"}}>Nos chambres</Link>
                         <Link to="/reservation" className="btn btn-light py-md-3 px-md-3"
                             style={{borderRadius: "0.6rem"}}>Reservez maintenant</Link>
                     </div>

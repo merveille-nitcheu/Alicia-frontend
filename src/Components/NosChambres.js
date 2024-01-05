@@ -1,19 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Categories from './Categories'
 import ChambresDispo from './ChambresDispo'
 
 export default function NosChambres () {
+    const navigate = useNavigate()
   return (
     <div className='container-xxl py-5'>
       <div className='container'>
-      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title text-center text-uppercase" style={{color:'#000000'}}>Chambres</h6>
-            <h1 class="mb-5" style={{color:'#000000'}}>Nos chambres disponibles</h1>
+      <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 className="section-title text-center text-uppercase" style={{color:'#000000'}}>Chambres</h6>
+            <h1 className="mb-5" style={{color:'#000000'}}>Nos chambres disponibles</h1>
         </div>
         <div className='row g-5'>
           <div className='col-lg-8'>
-            <ChambresDispo/>
+            <ChambresDispo onClick={()=>navigate('/chambres/details')}/>
           </div>
 
           <div className='col-lg-4'>

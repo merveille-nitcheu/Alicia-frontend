@@ -6,28 +6,30 @@ export default function TopHeader() {
     <div>
 
 <div className="container-fluid px-0">
-            <div className="row bg-dark d-none d-lg-flex py-auto" style={{paddingInline:'8%'}}>
-                <div className="col-lg-10 px-5 text-start">
-                    <div className="h-150 d-inline-flex align-items-center py-3 me-5">
+            <div className={`row bg-dark d-none d-lg-flex py-auto ${
+                window.innerWidth < 900 ? 'px-0' : ''
+              }`} style={{paddingInline:'4%'}}> 
+                <div className="col-lg-10  text-start">
+                    <div className="h-150 d-inline-flex align-items-center py-3 me-0 me-sm-3">
                         <i className="fa fa-envelope text-primary me-2"></i>
-                        <p className="mb-0 text-white">reservation@alicia-hotel.com</p>
+                        <a href='mailto:reservation@alicia-hotel.com' target="_blank" className="mb-0 text-white">reservation@alicia-hotel.com</a>
                     </div>
-                    <div className="h-150 d-inline-flex align-items-center py-3 me-5">
+                    <div className="h-150 d-inline-flex align-items-center py-3 me-0 me-sm-3">
                         <i className="fa fa-phone-alt text-primary me-2"></i>
-                        <p className="mb-0 text-white">+237 699 71 11 89 | 233 47 18 36</p>
+                        <a className="mb-0 text-white" href="https://wa.me/+237699711189" target="_blank">+237 699 71 11 89 | 233 47 18 36</a>
                     </div>
                     <div className="h-150 d-inline-flex align-items-center py-3">
                         <i className="fa fa-home text-primary me-2"></i>
-                        <p className="mb-0 text-white">Makepe Bloc L - Derrière Tradex Parcours Vita</p>
+                        <a href='https://maps.app.goo.gl/TWGfYnrzGy5Uzfxk9' target='_blank' className="mb-0 text-white">Makepe Bloc L - Derrière Tradex Parcours Vita</a>
                     </div>
                 </div>
-                <div className="col-lg-2 px-5 text-end">
+                <div className="col-lg-2  text-end">
                     <div className="d-inline-flex align-items-center py-3">
-                        <a className="me-3" href="" target="_blank"><i className="fab fa-facebook-f"></i></a>
-                        <a className="me-3" href="" target="_blank"><i className="fab fa-twitter"></i></a>
-                        <a className="me-3" href="" target="_blank"><i className="fab fa-linkedin-in"></i></a>
-                        <a className="me-3" href=""><i className="fab fa-instagram"></i></a>
-                        <a className="" href="https://wa.me/"><i className="fab fa-whatsapp"></i></a>
+                        <a className="me-3" href="https://www.facebook.com/aliciahotelcm" target="_blank"><i className="fab fa-facebook-f"></i></a>
+                        <a className="me-3" href="https://twitter.com/AliciaHotel" target="_blank"><i className="fab fa-twitter"></i></a>
+                        <a className="me-3" href="https://www.linkedin.com/in/alicia-hotel-50925728b/" target="_blank"><i className="fab fa-linkedin-in"></i></a>
+                        <a className="me-3" href="https://www.instagram.com/aliciahotelcm/" target="_blank"><i className="fab fa-instagram"></i></a>
+                        <a className="" href="https://wa.me/+237699711189" target="_blank"><i className="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
@@ -61,8 +63,8 @@ export default function TopHeader() {
 
 
                         <Link to="/reservation"
-                            className="btn btn-primary py-3 px-4 d-none d-lg-block"
-                            style={{borderRadius: '0.6rem'}}>Reservez Maintenant <i className="fa fa-arrow-right ms-3"></i>
+                            className="btn btn-primary py-3 px-4 d-none d-lg-block" 
+                            style={{borderRadius: '0.6rem',color:"#000000"}}>Reservez Maintenant <i className="fa fa-arrow-right ms-3"></i>
                         </Link>
 
 

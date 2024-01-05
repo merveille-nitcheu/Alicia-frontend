@@ -62,7 +62,7 @@ export default function Contact() {
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" style={{borderRadius:'0.6rem'}} type="submit">Envoyer Message</button>
+                                <button class="btn btn-primary w-100 py-3" style={{borderRadius:'0.6rem',color:"#000000"}} type="submit" >Envoyer Message</button>
                             </div>
                         </div>
                     </form>
