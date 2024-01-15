@@ -1,7 +1,7 @@
 import React from 'react'
 import slider4 from '../assets/img/slider/slider4.jpg'
 import slider18 from '../assets/img/slider/slider18.jpg'
-import slider7 from '../assets/img/slider/slider7.jpg'
+import slider2 from '../assets/img/slider/slider2.jpg'
 import slider11 from '../assets/img/slider/slider11.jpg'
 import { Link } from 'react-router-dom'
 
@@ -45,7 +45,7 @@ export default function Header() {
                         </div>
                     </div>
                     <div className="carousel-item ">
-                        <img className="w-100 " src={slider7} alt="Image"
+                        <img className="w-100 " src={slider2} alt="Image"
                             style={{height: '38rem'}}/>
                         <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div className="p-3" style={{maxWidth: '700px'}}>

@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
-import { DatePicker } from '@mui/x-date-pickers/DatePicker'
+import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker'
+import dayjs from 'dayjs'
+import EventIcon from '@mui/icons-material/Event';
 
-export default function Reservation ({onClick}) {
+export default function Reservation ({ onClick }) {
   const [nbChambres, setNbChambres] = useState(1)
 
   const handleNbChambresChange = event => {
@@ -60,26 +62,53 @@ export default function Reservation ({onClick}) {
 
  
 
+  const [dateArrivee, setDateArrivee] = useState(dayjs())
+  const [dateDepart, setDateDepart] = useState(null)
+
+  const handleDateArriveeChange = date => {
+    setDateArrivee(date)
+  }
+
+  const handleDateDepartChange = date => {
+    setDateDepart(date)
+  }
+
   return (
     <div className='row g-3 py-4 pt-2 px-0 px-sm-4'>
       <div className='col-12 col-sm-6'>
         <div className='date' id='date3' data-target-input='nearest'>
-        <LocalizationProvider dateAdapter={AdapterDayjs} className='custom-div'>
-                    <DatePicker
-          label="Date d'arrivée"
-         
-        />
-                    </LocalizationProvider>
+          <LocalizationProvider
+            dateAdapter={AdapterDayjs}
+            className='custom-div'
+          >
+            <MobileDatePicker
+              label="Date d'arrivée"
+              format='DD/MM/YYYY'
+              minDate={dayjs()}
+              value={dateArrivee}
+              onChange={handleDateArriveeChange}
+            />
+          </LocalizationProvider>
         </div>
       </div>
       <div className='col-12 col-sm-6'>
         <div className='date' id='date4' data-target-input='nearest'>
-        <LocalizationProvider dateAdapter={AdapterDayjs} >
-                    <DatePicker
-          label="Date de depart"
-         
-        />
-                    </LocalizationProvider>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <MobileDatePicker
+              label='Date de depart'
+              value={dateDepart}
+              onChange={handleDateDepartChange}
+              format='DD/MM/YYYY'
+              minDate={dateArrivee ? dateArrivee : ''}
+                  InputProps={{
+                endAdornment: (
+                  
+                    <EventIcon />
+                  
+                ),
+              }}
+            />
+          </LocalizationProvider>
         </div>
       </div>
       <div className='col-12 col-sm-6'>
@@ -87,25 +116,14 @@ export default function Reservation ({onClick}) {
           <input
             type='text'
             className='form-control datetimepicker-input'
-            placeholder='Heure de départ'
+            placeholder="Heure d'arrivée"
             data-target='#date4'
             data-toggle='datetimepicker'
           />
         </div>
       </div>
       <div className='col-12 col-sm-6'>
-        <select className='form-select' onChange={handleNbChambresChange}>
-          <option selected>Nbre de Chambres</option>
-          <option value='1'>1</option>
-          <option value='2'>2</option>
-          <option value='3'>3</option>
-          <option value='4'>4</option>
-          <option value='5'>5</option>
-          <option value='6'>6</option>
-          <option value='7'>7</option>
-          <option value='8'>8</option>
-          <option value='9'>9</option>
-        </select>
+      <input className='form-control' onChange={handleNbChambresChange} placeholder='Nbre de chambre' type='text'/>
       </div>
 
       <div className='col-12 mt-3 inputReserve' id='inputReserve'>

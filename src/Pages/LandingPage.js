@@ -8,8 +8,11 @@ import Footer from '../Components/Footer';
 import Galerie from '../Components/Galerie';
 import TopHeader from '../Components/TopHeader';
 import Booking from '../Components/Booking';
+import { useNavigate } from 'react-router-dom'
 
 export default function LandingPage() {
+
+  const navigate = useNavigate()
 
 
   return (

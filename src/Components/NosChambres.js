@@ -5,6 +5,11 @@ import ChambresDispo from './ChambresDispo'
 
 export default function NosChambres () {
     const navigate = useNavigate()
+    const handleClick = (roomCode) => {
+      console.log("code",roomCode)
+      navigate(`/chambres/details/${roomCode}`)
+
+    }
   return (
     <div className='container-xxl py-5'>
       <div className='container'>
@@ -12,12 +17,11 @@ export default function NosChambres () {
             <h6 className="section-title text-center text-uppercase" style={{color:'#000000'}}>Chambres</h6>
             <h1 className="mb-5" style={{color:'#000000'}}>Nos chambres disponibles</h1>
         </div>
-        <div className='row g-5'>
-          <div className='col-lg-8'>
-            <ChambresDispo onClick={()=>navigate('/chambres/details')}/>
-          </div>
+        
+            <ChambresDispo onClick={handleClick}/>
+          
 
-          <div className='col-lg-4'>
+          {/* <div className='col-lg-4'>
            <Categories/>
 
             <div
@@ -40,8 +44,8 @@ export default function NosChambres () {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </div> */}
+        
       </div>
     </div>
   )

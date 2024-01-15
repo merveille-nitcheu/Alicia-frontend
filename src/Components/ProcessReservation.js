@@ -3,19 +3,24 @@ import Reservation from './Reservation'
 import Stepper from '@mui/material/Stepper'
 import Step from '@mui/material/Step'
 import StepLabel from '@mui/material/StepLabel'
-import ChambresDispo from './ChambresDispo'
+import Chambres from './Chambres'
+import InfoClient from './InfoClient'
 
 export default function ProcessReservation () {
   const steps = [
     'Choisir la date',
     'Choisir la chambre',
+    'Reservation',
+    'confirmation'
   ]
   const getStepContent = (step) => {
     switch (step) {
       case 0:
         return <Reservation onClick={handleclickReservation}/>;
       case 1:
-        return <ChambresDispo onClick={handleclickReservation}/>;
+        return <Chambres onClick={handleclickReservation}/>;
+      case 2:
+        return <InfoClient onClick={handleclickReservationn}/>;
       default:
         return null;
     }
@@ -24,6 +29,9 @@ export default function ProcessReservation () {
   const [activeStep, setActiveStep] = React.useState(0);
 
   const handleclickReservation = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+  const handleclickReservationn = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 

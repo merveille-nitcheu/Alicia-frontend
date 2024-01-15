@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
-import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
+import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker'
+import { DateCalendar } from '@mui/x-date-pickers/DateCalendar'
+import dayjs from 'dayjs'
 
 export default function Booking () {
   const [selectedDate, setSelectedDate] = useState(null)
@@ -11,6 +13,16 @@ export default function Booking () {
     '@media (width:1160px)': {
       marginLeft: '-50px'
     }
+  }
+  const [dateArrivee, setDateArrivee] = useState(dayjs())
+  const [dateDepart, setDateDepart] = useState(null)
+
+  const handleDateArriveeChange = date => {
+    setDateArrivee(date)
+  }
+
+  const handleDateDepartChange = date => {
+    setDateDepart(date)
   }
   console.log(window.innerWidth)
   return (
@@ -33,14 +45,27 @@ export default function Booking () {
                 <div className='col-md-2'>
                   <div className='' id='date1' data-target-input='nearest'>
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <MobileDatePicker label="Date d'arrivée" />
+                      <MobileDatePicker
+                        label="Date d'arrivée"
+                        format='DD/MM/YYYY'
+                        size='small'
+                        minDate={dayjs()}
+                        value={dateArrivee}
+                        onChange={handleDateArriveeChange}
+                      />
                     </LocalizationProvider>
                   </div>
                 </div>
                 <div className='col-md-2 ms-3'>
                   <div className='' id='date2' data-target-input='nearest'>
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <MobileDatePicker label="Date de Depart" />
+                      <MobileDatePicker
+                        label='Date de Depart'
+                        value={dateDepart}
+                        onChange={handleDateDepartChange}
+                        format='DD/MM/YYYY'
+                        minDate={dateArrivee ? dateArrivee : ''}
+                      />
                     </LocalizationProvider>
                   </div>
                 </div>
@@ -88,15 +113,14 @@ export default function Booking () {
                 </div>
               </div>
             </div>
-            <div className='col-md-2 mb-md-0' style={{ marginLeft: '-80px' }}>
+            <div className='col-md-2 mb-md-0 custom-div'>
               <button
                 className='btn btn-primary'
                 style={{
                   height: '50px',
                   width: '250px',
                   borderRadius: '0.6rem',
-                  color:'#000000'
-
+                  color: '#000000'
                 }}
               >
                 Verifiez disponibilité{' '}

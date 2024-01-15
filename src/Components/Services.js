@@ -42,8 +42,7 @@ export default function Services () {
               </div>
               <h5 className='mb-3'>Chambres Climatisées</h5>
               <p className='text-body mb-0'>
-                Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
-                sed diam stet diam sed stet lorem.
+                Alicia Hotel vous offre des chambres climatisées pour un sejour inoubliable.
               </p>
             </a>
           </div>
@@ -67,8 +66,7 @@ export default function Services () {
               </div>
               <h5 className='mb-3'>Restaurant</h5>
               <p className='text-body mb-0'>
-                Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
-                sed diam stet diam sed stet lorem.
+              Un restaurant-bar offrant un petit déjeuner continental ainsi qu’une diversité de plats africains et européens.
               </p>
             </a>
           </div>
@@ -92,8 +90,7 @@ export default function Services () {
               </div>
               <h5 className='mb-3'>Parking gratuit</h5>
               <p className='text-body mb-0'>
-                Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
-                sed diam stet diam sed stet lorem.
+              Ouverte 24h/ 24, Alicia hôtel dispose d’un parking de 20 véhicules extérieur et intérieur hautement sécurisé,
               </p>
             </a>
           </div>
@@ -117,8 +114,7 @@ export default function Services () {
               </div>
               <h5 className='mb-3'>Salle de reunion</h5>
               <p className='text-body mb-0'>
-                Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
-                sed diam stet diam sed stet lorem.
+              Une salle de réunion d'une capacité de 30 places modulables et adaptées pour des séminaires en visioconférence.
               </p>
             </a>
           </div>
@@ -140,10 +136,9 @@ export default function Services () {
                   <i className='fa fa-glass-cheers fa-2x text-primary'></i>
                 </div>
               </div>
-              <h5 className='mb-3'>Salle de fete</h5>
+              <h5 className='mb-3'>Hébergement</h5>
               <p className='text-body mb-0'>
-                Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
-                sed diam stet diam sed stet lorem.
+              avec une capacité de 45 chambres réparties en trois catégories, nous vous proposons les chambres Standard, Luxe, et Grand luxe confortables et spacieuses.
               </p>
             </a>
           </div>
@@ -165,10 +160,9 @@ export default function Services () {
                   <i className='fa fa-dumbbell fa-2x text-primary'></i>
                 </div>
               </div>
-              <h5 className='mb-3'>GYM &amp; Yoga</h5>
+              <h5 className='mb-3'>Personnels</h5>
               <p className='text-body mb-0'>
-                Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
-                sed diam stet diam sed stet lorem.
+              Un personnel dynamique et accueillant, et un service de sécurité professionnel pour assurer votre séjour.
               </p>
             </a>
           </div>

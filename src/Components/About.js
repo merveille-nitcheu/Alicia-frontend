@@ -1,8 +1,8 @@
 import React from 'react'
 import slider3 from "../assets/img/slider/slider3.jpg"
 import img2 from "../assets/img/slider/img2.jpg"
-import slider11 from "../assets/img/slider/slider11.jpg"
-import reunion from "../assets/img/fin/reunion.jpg"
+import slider11 from "../assets/img/Photos/5.jpeg"
+import reunion from "../assets/img/Photos/6.jpeg"
 import { Link } from 'react-router-dom'
 
 
@@ -15,15 +15,13 @@ export default function About() {
                         <h6 className="section-title text-start text-uppercase" style={{color:'#000000'}}>A Propos de Nous</h6>
                         <h1 className="mb-4" style={{color:'#000000'}}>Bienvenue chez <span className="text-uppercase">Alicia
                                 Hotel</span></h1>
-                        <p className="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet
-                            diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna
-                            dolore erat amet</p>
+                        <p className="mb-4">ALICIA HOTEL propose un hébergement confortable pour un séjour professionnel ou familial avec une connexion internet haut débit, un restaurant-bar offrant une variété de plats, une salle de réunion pour vos événements professionnels, un parking sécurisé, un personnel accueillant et un service de sécurité professionnel.</p>
                         <div className="row g-3 pb-4">
                             <div className="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
                                 <div className="border rounded p-1">
                                     <div className="border rounded text-center p-4 text-primary">
                                         <i className="fa fa-hotel fa-2x  mb-2"></i>
-                                        <h2 className="mb-1" data-toggle="counter-up">40</h2>
+                                        <h2 className="mb-1" data-toggle="counter-up">42</h2>
                                         <p className="mb-0">Chambres</p>
                                     </div>
                                 </div>
