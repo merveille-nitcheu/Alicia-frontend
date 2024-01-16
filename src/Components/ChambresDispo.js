@@ -8,21 +8,15 @@ import TabPanel from '@mui/lab/TabPanel'
 import standard from '../assets/img/room/standard.jpg'
 import luxe from '../assets/img/room/luxe.jpg'
 import grandluxe from '../assets/img/room/grandluxe.jpg'
-import ReactPaginate from 'react-paginate'
+import usePagination from './Pagination/usePagination'
+import Pagination from './Pagination/Pagination'
+
 
 export default function ChambresDispo ({ onClick }) {
   const [Chambresliste, setChambresliste] = React.useState([])
   const [standardChambres, setStandardChambres] = React.useState([])
   const [luxeChambres, setLuxeChambres] = React.useState([])
   const [grandluxeChambres, setGrandLuxeChambres] = React.useState([])
-  const [currentPage, setCurrentPage] = useState(0)
-  const [currentStandardPage, setCurrentStandardPage] = useState(0)
-  const [currentLuxePage, setCurrentLuxePage] = useState(0)
-  const [currentGrandLuxePage, setCurrentGrandLuxePage] = useState(0)
-  const [totalchambresPages, setTotalChambresPages] = useState(0)
-  const [totalstandardPages, setTotalStandardPages] = useState(0)
-  const [totalluxePages, setTotalLuxePages] = useState(0)
-  const [totalgrandluxePages, setTotalGrandluxePages] = useState(0)
   const itemsPerPage = 3
 
   useEffect(() => {
@@ -32,14 +26,12 @@ export default function ChambresDispo ({ onClick }) {
         const data = response.data
 
         setChambresliste(data)
-        setTotalChambresPages(Math.ceil(data.length / itemsPerPage))
       })
 
       .catch(error => {
         console.log(error)
       })
-  }, [Chambresliste])
-
+  }, [])
   const [value, setValue] = React.useState('1')
 
   const handleChange = (event, newValue) => {
@@ -51,65 +43,72 @@ export default function ChambresDispo ({ onClick }) {
       chambre => chambre.cataloque.toLowerCase() === 'confort'
     )
     setStandardChambres(filteredStandardChambres)
-    setTotalStandardPages(
-      Math.ceil(filteredStandardChambres.length / itemsPerPage)
-    )
-  }, [standardChambres])
+    
+  }, [Chambresliste])
 
   useEffect(() => {
     const filteredluxeChambres = Chambresliste.filter(
       chambre => chambre.cataloque.toLowerCase() === 'luxe'
     )
     setLuxeChambres(filteredluxeChambres)
-    setTotalLuxePages(Math.ceil(filteredluxeChambres.length / itemsPerPage))
-  }, [luxeChambres])
+    
+  }, [Chambresliste])
 
   useEffect(() => {
     const filteregrandluxeChambres = Chambresliste.filter(
       chambre => chambre.cataloque.toLowerCase() === 'grandluxe'
     )
     setGrandLuxeChambres(filteregrandluxeChambres)
-    setTotalGrandluxePages(
-      Math.ceil(filteregrandluxeChambres.length / itemsPerPage)
-    )
-  }, [grandluxeChambres])
+  }, [Chambresliste])
 
-  function getSubset (data, currentPage, itemsPerPage) {
-    const startIndex = currentPage * itemsPerPage
-    const endIndex = startIndex + itemsPerPage
-    const subset = data.slice(startIndex, endIndex)
-    return subset
-  }
+  const {
+    next: next1,
+    prev: prev1,
+    jump: jump1,
+    currentData: currentData1,
+    currentPage: currentPage1,
+    maxPage: maxPage1,
+    dataLength: dataLength1,
+    beginItem: beginItem1,
+    endItem: endItem1
+  } = usePagination(Chambresliste, itemsPerPage);
 
-  const currentDataChambres = getSubset(
-    Chambresliste,
-    currentPage,
-    itemsPerPage
-  )
-  const currentDataStandard = getSubset(
-    standardChambres,
-    currentStandardPage,
-    itemsPerPage
-  )
-  const currentDataLuxe = getSubset(luxeChambres, currentLuxePage, itemsPerPage)
-  const currentDataGrandLuxe = getSubset(
-    grandluxeChambres,
-    currentGrandLuxePage,
-    itemsPerPage
-  )
+  const {
+    next: next2,
+    prev: prev2,
+    jump: jump2,
+    currentData: currentData2,
+    currentPage: currentPage2,
+    maxPage: maxPage2,
+    dataLength: dataLength2,
+    beginItem: beginItem2,
+    endItem: endItem2
+  } = usePagination(standardChambres, itemsPerPage);
 
-  const handlePageChange = selectedPage => {
-    setCurrentPage(selectedPage.selected)
-  }
-  const handlePageStandardChange = selectedPage => {
-    setCurrentStandardPage(selectedPage.selected)
-  }
-  const handlePageLuxeChange = selectedPage => {
-    setCurrentLuxePage(selectedPage.selected)
-  }
-  const handlePageGrandLuxeChange = selectedPage => {
-    setCurrentGrandLuxePage(selectedPage.selected)
-  }
+  const {
+    next: next3,
+    prev: prev3,
+    jump: jump3,
+    currentData: currentData3,
+    currentPage: currentPage3,
+    maxPage: maxPage3,
+    dataLength: dataLength3,
+    beginItem: beginItem3,
+    endItem: endItem3
+  } = usePagination(luxeChambres, itemsPerPage);
+
+  const {
+    next: next4,
+    prev: prev4,
+    jump: jump4,
+    currentData: currentData4,
+    currentPage: currentPage4,
+    maxPage: maxPage4,
+    dataLength: dataLength4,
+    beginItem: beginItem4,
+    endItem: endItem4
+  } = usePagination(grandluxeChambres, itemsPerPage);
+
 
   return (
     <div>
@@ -154,7 +153,7 @@ export default function ChambresDispo ({ onClick }) {
           </div>
 
           <TabPanel value='1'>
-            {currentDataChambres?.map(room => (
+            {currentData1?.map(room => (
               <div className='row mb-5'>
                 <div
                   className='col-md-5 col-lg-12 col-xl-5 p-0'
@@ -219,22 +218,22 @@ export default function ChambresDispo ({ onClick }) {
               }}
             >
               <div className='col-12'>
-                <nav aria-label='Page navigation'>
-                  <ul className='pagination justify-content-center m-0 d-flex'>
-                    <ReactPaginate
-                      onPageChange={handlePageChange}
-                      forcePage={currentPage}
-                      containerClassName={'d-flex gap-4'}
-                      previousPage="<<"
-                  nextPage=">>"
-                    />
-                  </ul>
-                </nav>
+              {Chambresliste?.length > itemsPerPage && (
+            <Pagination
+              next={next1}
+              prev={prev1}
+              currentData={currentData1}
+              dataLength={dataLength1}
+              itemsPerPage={itemsPerPage}
+              beginItem={beginItem1}
+              endItem={endItem1}
+            />
+          )}
               </div>
             </div>
           </TabPanel>
           <TabPanel value='2'>
-            {currentDataStandard?.map(room => (
+            {currentData2?.map(room => (
               <div className='row mb-5'>
                 <div
                   className='col-md-5 col-lg-12 col-xl-5 p-0'
@@ -299,21 +298,22 @@ export default function ChambresDispo ({ onClick }) {
               }}
             >
               <div className='col-12'>
-                <nav aria-label='Page navigation'>
-                  <ul className='pagination justify-content-center m-0 d-flex'>
-                    <ReactPaginate
-                      pageCount={1}
-                      onPageChange={handlePageStandardChange}
-                      forcePage={currentStandardPage}
-                      containerClassName={'d-flex gap-4'}
-                    />
-                  </ul>
-                </nav>
+              {standardChambres?.length > itemsPerPage && (
+            <Pagination
+              next={next2}
+              prev={prev2}
+              currentData={currentData2}
+              dataLength={dataLength2}
+              itemsPerPage={itemsPerPage}
+              beginItem={beginItem2}
+              endItem={endItem2}
+            />
+          )}
               </div>
             </div>
           </TabPanel>
           <TabPanel value='3'>
-            {currentDataLuxe?.map(room => (
+            {currentData3?.map(room => (
               <div className='row mb-5'>
                 <div
                   className='col-md-5 col-lg-12 col-xl-5 p-0'
@@ -378,21 +378,22 @@ export default function ChambresDispo ({ onClick }) {
               }}
             >
               <div className='col-12'>
-                <nav aria-label='Page navigation'>
-                  <ul className='pagination justify-content-center m-0 d-flex'>
-                    <ReactPaginate
-                      pageCount={1}
-                      onPageChange={handlePageLuxeChange}
-                      forcePage={currentLuxePage}
-                      containerClassName={'d-flex gap-4'}
-                    />
-                  </ul>
-                </nav>
+              {luxeChambres?.length > itemsPerPage && (
+            <Pagination
+              next={next3}
+              prev={prev3}
+              currentData={currentData3}
+              dataLength={dataLength3}
+              itemsPerPage={itemsPerPage}
+              beginItem={beginItem3}
+              endItem={endItem3}
+            />
+          )}
               </div>
             </div>
           </TabPanel>
           <TabPanel value='4'>
-            {currentDataGrandLuxe?.map(room => (
+            {currentData4?.map(room => (
               <div className='row mb-5'>
                 <div
                   className='col-md-5 col-lg-12 col-xl-5 p-0'
@@ -457,16 +458,17 @@ export default function ChambresDispo ({ onClick }) {
               }}
             >
               <div className='col-12'>
-                <nav aria-label='Page navigation'>
-                  <ul className='pagination justify-content-center m-0 d-flex'>
-                    <ReactPaginate
-                    pageCount={1}
-                      onPageChange={handlePageGrandLuxeChange}
-                      forcePage={currentGrandLuxePage}
-                      containerClassName={'d-flex gap-4'}
-                    />
-                  </ul>
-                </nav>
+              {grandluxeChambres?.length > itemsPerPage && (
+            <Pagination
+              next={next4}
+              prev={prev4}
+              currentData={currentData4}
+              dataLength={dataLength4}
+              itemsPerPage={itemsPerPage}
+              beginItem={beginItem4}
+              endItem={endItem4}
+            />
+          )}
               </div>
             </div>
           </TabPanel>
